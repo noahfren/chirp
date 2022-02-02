@@ -1,0 +1,5 @@
+# local database volume
+db
+
+# node modules
+**/node_modules

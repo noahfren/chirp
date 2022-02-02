@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Chirp Server",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon -L src/index.js",
+    "lint": "prettier --write --check \"**/*.js\" && eslint --fix ./src"
+  },
+  "author": "Noah Frenkel",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^3.6.2",
+    "graphql": "^16.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}

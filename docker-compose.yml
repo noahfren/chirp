@@ -24,4 +24,15 @@ services:
     depends_on:
       - mongodb
 
+  chirp-client:
+    build: client
+    container_name: chirp-client
+    command: yarn start
+    ports:
+      - 3000:3000
+    volumes:
+      - "./client/src:/usr/app/src"
+      - "./client/public:/usr/app/public"
+    depends_on:
+      - chirp-server
     

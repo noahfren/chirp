@@ -16,7 +16,7 @@ services:
   chirp-server:
     build: server
     container_name: chirp-server
-    command: yarn start
+    command: yarn start:docker
     ports:
       - 4000:4000
     volumes:

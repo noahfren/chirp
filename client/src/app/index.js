@@ -1,8 +1,7 @@
-import React from "react";
-
 import "./App.css";
 
-import Timeline from "./Timeline";
+import Header from "../header";
+import Timeline from "../common/Timeline";
 
 const mockChirps = [
     {
@@ -31,6 +30,7 @@ const mockChirps = [
 function App() {
     return (
         <div className="App">
+            <Header/>
             <Timeline chirps={mockChirps} />
         </div>
     );

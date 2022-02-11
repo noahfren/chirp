@@ -1,8 +1,11 @@
 env:
     browser: true
     es6: true
+plugins:
+  - "jest"
 extends:
     - "eslint:recommended"
+    - "plugin:jest/recommended"
     - "plugin:react/recommended"
     - "prettier"
 parserOptions:
@@ -14,3 +17,5 @@ rules:
     no-unused-vars:
         - error
         - args: none
+    "react/react-in-jsx-scope":
+        - off

@@ -7,8 +7,6 @@ function Timeline({ chirps }) {
 }
 
 const StyledTimeline = styled.div`
-    grid-row: 2;
-    grid-column: 2;
     display: grid;
     grid-template-rows: repeat(${(props) => props.rows}, 100px);
     row-gap: 10px;

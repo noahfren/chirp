@@ -44,7 +44,6 @@ const StyledSubmitInput = styled(StyledInput)`
 `;
 
 const StyledForm = styled.form`
-    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -49,7 +49,7 @@ const StyledApp = styled.div`
     overflow: hidden;
     display: grid;
     grid-template-rows: 70px 1fr 30px;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr minmax(500px, 2fr) 1fr;
 `;
 
 export default App;

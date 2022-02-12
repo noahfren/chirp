@@ -10,6 +10,7 @@ const StyledHeader = styled.div`
     padding: 10px;
     font-weight: bold;
     font-size: 36px;
+    z-index: 1000;
 `;
 
 export default Header;

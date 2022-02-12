@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Header from "../header";
 import Home from "../home";
+import Login from "../login";
 import Profile from "../profile";
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
                 <Header/>
                 <StyledContentContainer>
                     <Switch>
+                        <Route path="/login">
+                            <Login/>
+                        </Route>
                         <Route path="/profile">
                             <Profile/>
                         </Route>

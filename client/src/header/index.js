@@ -3,8 +3,11 @@ import styled from "styled-components";
 
 function Header() {
     return <StyledHeader>
-        <StyledLogoLink to={"/"}>chirp.</StyledLogoLink>
-        <StyledNavLink to={"/profile"}>My Account</StyledNavLink>
+        <LogoLink to={"/"}>chirp.</LogoLink>
+        <div className="right-items">
+            <NavLink to={"/profile"}>My Account</NavLink>
+            <NavLink to={"/login"}>Log In</NavLink>
+        </div>
     </StyledHeader>
 };
 
@@ -13,20 +16,21 @@ const StyledLink = styled(Link)`
     text-decoration: unset;
 `;
 
-const StyledLogoLink = styled(StyledLink)`
+const LogoLink = styled(StyledLink)`
     font-weight: bold;
     font-size: 36px;
-    padding-right: 20px;
 `;
 
-const StyledNavLink = styled(StyledLink)`
+const NavLink = styled(StyledLink)`
     font-size: 20px;
-    align-self: center;
+    padding: 5px;
+    
 
     &:hover {
         text-decoration: underline;
     }
 `;
+
 
 const StyledHeader = styled.div`
     grid-row: 1;
@@ -34,7 +38,8 @@ const StyledHeader = styled.div`
     padding: 10px;
     z-index: 1000;
     display: flex;
-    align-content: center;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 export default Header;

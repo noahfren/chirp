@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { DisplayNameLabel, UserNameLabel } from ".";
 
 function Chirp({ chirp }) {
     return (
@@ -13,15 +14,6 @@ function Chirp({ chirp }) {
     );
 }
 
-const DisplayNameLabel = styled.div`
-    font-weight: bold;
-    padding-right: 5px;
-`;
-
-const UserNameLabel = styled.div`
-    font-weight: lighter;
-    padding-right: 5px;
-`;
 
 const Header = styled.div`
     display: flex;

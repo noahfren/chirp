@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Header from "../header";
 import Home from "../home";
+import Profile from "../profile";
 
 function App() {
     return (
@@ -12,7 +13,7 @@ function App() {
                 <StyledContentContainer>
                     <Switch>
                         <Route path="/profile">
-                            <p>My Profile Page Here</p>
+                            <Profile/>
                         </Route>
                         <Route path="/">
                             <Home/>

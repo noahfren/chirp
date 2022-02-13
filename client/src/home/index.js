@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import Page from "../common/Page";
 
 import Timeline from "../common/Timeline";
 
@@ -113,13 +113,10 @@ const mockChirps = [
 
 function Home() {
     return (
-        <StyledHome>
+        <Page>
             <Timeline chirps={mockChirps} />
-        </StyledHome>
+        </Page>
     );
 };
-
-const StyledHome = styled.div`
-`;
 
 export default Home;

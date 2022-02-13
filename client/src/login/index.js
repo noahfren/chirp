@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import LoadingCover from "../common/LoadingCover";
 
 import { useAuth } from "../common/hooks/useAuth";
+import Page from "../common/Page";
 
 function Login() {
     const [userNameInput, setUserNameInput] = useState("");
@@ -36,7 +36,6 @@ function Login() {
     };
 
     return <StyledLogin>
-        {auth.loading && <LoadingCover/>}
         <StyledForm onSubmit={handleSubmit}>
             <StyledLabel>Username</StyledLabel>
             <StyledInput type="text" onChange={handleUserNameChange}/>
@@ -63,9 +62,7 @@ const StyledSubmitInput = styled(StyledInput)`
     width: 100px;
 `;
 
-const StyledForm = styled.form`
-    display: flex;
-    flex-direction: column;
+const StyledForm = styled(Page)`
     align-items: center;
 `;
 

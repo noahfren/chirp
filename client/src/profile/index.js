@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { DisplayNameLabel, UserNameLabel } from "../common";
+import Page from "../common/Page";
 
 import Timeline from "../common/Timeline";
 
@@ -119,24 +120,20 @@ const mockProfileOwner = {
 
 function Profile() {
     return (
-        <StyledProfile>
+        <Page>
             <StyledProfileHeader>
                 <DisplayNameLabel>{mockProfileOwner.displayName}</DisplayNameLabel>
                 <UserNameLabel>@{mockProfileOwner.userName}</UserNameLabel>
             </StyledProfileHeader>
             <Timeline chirps={mockChirps} />
-        </StyledProfile>
+        </Page>
     );
 };
 
-const StyledProfile = styled.div`
-`;
-
 const StyledProfileHeader = styled.div`
     height: 50px;
-    top: 0px;
-    position: sticky;
     background-color: white;
+    padding-bottom: 5px;
 `;
 
 export default Profile;

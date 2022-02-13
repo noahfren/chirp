@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 import Header from "../header";
 import Home from "../home";
-import { ProvideAuth } from "../common/hooks/useAuth";
+import { ProvideAuth, useAuth } from "../common/hooks/useAuth";
 import Login from "../login";
 import Profile from "../profile";
+import LoadingCover from "../common/LoadingCover";
 
 function App() {
     return (
@@ -13,25 +14,31 @@ function App() {
             <StyledApp>
                 <BrowserRouter>
                     <Header/>
-                    <StyledContentContainer>
-                        <Switch>
-                            <Route path="/login">
-                                <Login/>
-                            </Route>
-                            <Route path="/profile">
-                                <Profile/>
-                            </Route>
-                            <Route path="/">
-                                <Home/>
-                            </Route>
-                        </Switch>
-                    </StyledContentContainer>
+                    <Content />
                     <StyledFooter/>
                 </BrowserRouter>
             </StyledApp>
         </ProvideAuth>
     );
 }
+
+function Content() {
+    const auth = useAuth();
+    return <StyledContent>
+        {auth.loading && <LoadingCover/>}
+        <Switch>
+            <Route path="/login">
+                <Login/>
+            </Route>
+            <Route path="/profile">
+                <Profile/>
+            </Route>
+            <Route path="/">
+                <Home/>
+            </Route>
+        </Switch>
+    </StyledContent>
+};
 
 const StyledFooter = styled.div`
     grid-row: 3;
@@ -40,10 +47,13 @@ const StyledFooter = styled.div`
     z-index: 1000;
 `;
 
-const StyledContentContainer = styled.div`
+const StyledContent = styled.div`
     grid-row: 2;
     grid-column: 2;
-    overflow-y: scroll;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
 `;
 
 const StyledApp = styled.div`

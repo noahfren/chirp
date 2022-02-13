@@ -10,6 +10,7 @@ const StyledTimeline = styled.div`
     display: grid;
     grid-template-rows: repeat(${(props) => props.rows}, 100px);
     row-gap: 10px;
+    overflow-y: scroll;
 `;
 
 Timeline.propTypes = {

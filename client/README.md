@@ -2,9 +2,15 @@
 
 Chirp's frontend, built with React.
 
+## public
+Public assets for app.
+
+## src
+ App's source code, broken down by feature domain as follows.
+
 ### app
 Entry point of the app.
-Responsible for top-level layout and rendering header/correct content/footer 
+Responsible for top-level layout and rendering header/correct content/footer.
 
 ### common
 Shared code, including components, hooks, etc.

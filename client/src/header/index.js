@@ -1,14 +1,23 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useAuth } from "../hooks/useAuth";
 
 function Header() {
-    return <StyledHeader>
-        <LogoLink to={"/"}>chirp.</LogoLink>
-        <div className="right-items">
-            <NavLink to={"/profile"}>My Account</NavLink>
-            <NavLink to={"/login"}>Log In</NavLink>
-        </div>
-    </StyledHeader>
+    const auth = useAuth();
+    return (
+        <StyledHeader>
+            <LogoLink to={"/"}>chirp.</LogoLink>
+            <div className="right-items">
+                {auth.activeUser ? (<>
+                        <NavLink to={"/profile"}>My Account</NavLink>
+                        <NavLink to={"/"} onClick={() => { auth.logOut(); }}>Log Out</NavLink>
+                    </>
+                ) : (
+                    <NavLink to={"/login"}>Log In</NavLink>
+                )}
+            </div>
+        </StyledHeader>
+    );
 };
 
 const StyledLink = styled(Link)`

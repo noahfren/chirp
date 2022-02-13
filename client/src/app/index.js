@@ -3,30 +3,33 @@ import styled from "styled-components";
 
 import Header from "../header";
 import Home from "../home";
+import { ProvideAuth } from "../hooks/useAuth";
 import Login from "../login";
 import Profile from "../profile";
 
 function App() {
     return (
-        <StyledApp>
-            <BrowserRouter>
-                <Header/>
-                <StyledContentContainer>
-                    <Switch>
-                        <Route path="/login">
-                            <Login/>
-                        </Route>
-                        <Route path="/profile">
-                            <Profile/>
-                        </Route>
-                        <Route path="/">
-                            <Home/>
-                        </Route>
-                    </Switch>
-                </StyledContentContainer>
-                <StyledFooter/>
-            </BrowserRouter>
-        </StyledApp>
+        <ProvideAuth>
+            <StyledApp>
+                <BrowserRouter>
+                    <Header/>
+                    <StyledContentContainer>
+                        <Switch>
+                            <Route path="/login">
+                                <Login/>
+                            </Route>
+                            <Route path="/profile">
+                                <Profile/>
+                            </Route>
+                            <Route path="/">
+                                <Home/>
+                            </Route>
+                        </Switch>
+                    </StyledContentContainer>
+                    <StyledFooter/>
+                </BrowserRouter>
+            </StyledApp>
+        </ProvideAuth>
     );
 }
 

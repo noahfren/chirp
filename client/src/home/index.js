@@ -117,6 +117,6 @@ function Home() {
             <Timeline chirps={mockChirps} />
         </Page>
     );
-};
+}
 
 export default Home;

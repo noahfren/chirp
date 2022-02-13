@@ -14,7 +14,6 @@ function Chirp({ chirp }) {
     );
 }
 
-
 const Header = styled.div`
     display: flex;
     grid-row: 1;
@@ -41,7 +40,7 @@ Chirp.propTypes = {
             displayName: PropTypes.string,
         }),
         message: PropTypes.string,
-    }).isRequired
+    }).isRequired,
 };
 
 export default Chirp;

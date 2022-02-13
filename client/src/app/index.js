@@ -7,15 +7,16 @@ import { ProvideAuth, useAuth } from "../common/hooks/useAuth";
 import Login from "../login";
 import Profile from "../profile";
 import LoadingCover from "../common/LoadingCover";
+import Signup from "../signup";
 
 function App() {
     return (
         <ProvideAuth>
             <StyledApp>
                 <BrowserRouter>
-                    <Header/>
+                    <Header />
                     <Content />
-                    <StyledFooter/>
+                    <StyledFooter />
                 </BrowserRouter>
             </StyledApp>
         </ProvideAuth>
@@ -24,21 +25,26 @@ function App() {
 
 function Content() {
     const auth = useAuth();
-    return <StyledContent>
-        {auth.loading && <LoadingCover/>}
-        <Switch>
-            <Route path="/login">
-                <Login/>
-            </Route>
-            <Route path="/profile">
-                <Profile/>
-            </Route>
-            <Route path="/">
-                <Home/>
-            </Route>
-        </Switch>
-    </StyledContent>
-};
+    return (
+        <StyledContent>
+            {auth.loading && <LoadingCover />}
+            <Switch>
+                <Route path="/signup">
+                    <Signup />
+                </Route>
+                <Route path="/login">
+                    <Login />
+                </Route>
+                <Route path="/profile">
+                    <Profile />
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
+        </StyledContent>
+    );
+}
 
 const StyledFooter = styled.div`
     grid-row: 3;

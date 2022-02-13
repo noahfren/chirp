@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { DisplayNameLabel, UserNameLabel } from "../common";
+import { useAuth } from "../common/hooks/useAuth";
 import Page from "../common/Page";
 
 import Timeline from "../common/Timeline";
@@ -113,22 +114,18 @@ const mockChirps = [
     },
 ];
 
-const mockProfileOwner = {
-    userName: "noahfrenkel",
-    displayName: "Noah Frenkel",
-}
-
 function Profile() {
+    const auth = useAuth();
     return (
         <Page>
             <StyledProfileHeader>
-                <DisplayNameLabel>{mockProfileOwner.displayName}</DisplayNameLabel>
-                <UserNameLabel>@{mockProfileOwner.userName}</UserNameLabel>
+                <DisplayNameLabel>{auth.activeUser.displayName}</DisplayNameLabel>
+                <UserNameLabel>@{auth.activeUser.userName}</UserNameLabel>
             </StyledProfileHeader>
             <Timeline chirps={mockChirps} />
         </Page>
     );
-};
+}
 
 const StyledProfileHeader = styled.div`
     height: 50px;

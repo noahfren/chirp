@@ -32,15 +32,18 @@ const useProvideAuth = () => {
             setTimeout(() => {
                 resolve();
             }, 500);
-        }).then(() => {
-            cb();
-        }).catch((err) => {
-            setError(err);
-            alert(err.message);
-        }).finally(() => {
-            setLoading(false);
-        });
-};
+        })
+            .then(() => {
+                cb();
+            })
+            .catch((err) => {
+                setError(err);
+                alert(err.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    };
 
     // Auth lifecycle methods
     // TODO: replace mock auth logic
@@ -59,11 +62,21 @@ const useProvideAuth = () => {
         });
     };
 
+    const signUp = (userName, password, displayName) => {
+        return delayWithLoading(() => {
+            setActiveUser({
+                userName,
+                displayName,
+            });
+        });
+    };
+
     return {
         activeUser,
         loading,
         error,
         logIn,
         logOut,
+        signUp,
     };
 };

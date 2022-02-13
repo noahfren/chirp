@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+import { Link, useHistory } from "react-router-dom";
 
+import { StyledForm, StyledInput, StyledLabel, StyledSubmitInput } from "../common";
 import { useAuth } from "../common/hooks/useAuth";
 import Page from "../common/Page";
 
@@ -21,12 +21,12 @@ function Login() {
     }, []);
 
     const handleUserNameChange = (e) => {
-        setUserNameInput(e.target.value)
-    }
+        setUserNameInput(e.target.value);
+    };
 
     const handlePasswordChange = (e) => {
-        setPasswordInput(e.target.value)
-    }
+        setPasswordInput(e.target.value);
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,40 +35,18 @@ function Login() {
         });
     };
 
-    return <StyledLogin>
-        <StyledForm onSubmit={handleSubmit}>
-            <StyledLabel>Username</StyledLabel>
-            <StyledInput type="text" onChange={handleUserNameChange}/>
-            <StyledLabel>Password</StyledLabel>
-            <StyledInput type="password" onChange={handlePasswordChange}/>
-            <StyledSubmitInput type="submit" value="Sign In"/>
-        </StyledForm>
-    </StyledLogin>
-};
-
-const StyledLabel = styled.label`
-    font-size: 16px;
-    width: 50%;
-    text-align: left;
-`;
-
-const StyledInput = styled.input`
-    margin: 5px;
-    font-size: 16px;
-    width: 50%;
-`;
-
-const StyledSubmitInput = styled(StyledInput)`
-    width: 100px;
-`;
-
-const StyledForm = styled(Page)`
-    align-items: center;
-`;
-
-const StyledLogin = styled.div`
-    position: relative;
-    height: 100%;
-`;
+    return (
+        <Page>
+            <StyledForm onSubmit={handleSubmit}>
+                <StyledLabel>Username</StyledLabel>
+                <StyledInput type="text" onChange={handleUserNameChange} />
+                <StyledLabel>Password</StyledLabel>
+                <StyledInput type="password" onChange={handlePasswordChange} />
+                <StyledSubmitInput type="submit" value="Log In" />
+                <div>{"Don't have an account? "}<Link to="/signup">Sign Up</Link></div>
+            </StyledForm>
+        </Page>
+    );
+}
 
 export default Login;

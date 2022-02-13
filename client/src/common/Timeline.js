@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 import Chirp from "./Chirp";
 
 function Timeline({ chirps }) {
-    return <StyledTimeline rows={chirps.length}>{chirps.map((chirp, i) => <Chirp chirp={chirp} index={i} key={`chirp-${i}`} />)}</StyledTimeline>;
+    return (
+        <StyledTimeline rows={chirps.length}>
+            {chirps.map((chirp, i) => (
+                <Chirp chirp={chirp} index={i} key={`chirp-${i}`} />
+            ))}
+        </StyledTimeline>
+    );
 }
 
 const StyledTimeline = styled.div`

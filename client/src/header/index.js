@@ -8,17 +8,28 @@ function Header() {
         <StyledHeader>
             <LogoLink to={"/"}>chirp.</LogoLink>
             <div className="right-items">
-                {auth.activeUser ? (<>
+                {auth.activeUser ? (
+                    <>
                         <NavLink to={"/profile"}>My Account</NavLink>
-                        <NavLink to={"/"} onClick={() => { auth.logOut(); }}>Log Out</NavLink>
+                        <NavLink
+                            to={"/"}
+                            onClick={() => {
+                                auth.logOut();
+                            }}
+                        >
+                            Log Out
+                        </NavLink>
                     </>
                 ) : (
-                    <NavLink to={"/login"}>Log In</NavLink>
+                    <>
+                        <NavLink to={"/login"}>Log In</NavLink>
+                        <NavLink to={"/signup"}>Sign Up</NavLink>
+                    </>
                 )}
             </div>
         </StyledHeader>
     );
-};
+}
 
 const StyledLink = styled(Link)`
     color: black;
@@ -32,14 +43,12 @@ const LogoLink = styled(StyledLink)`
 
 const NavLink = styled(StyledLink)`
     font-size: 20px;
-    padding: 5px;
-    
+    padding: 5px 10px;
 
     &:hover {
         text-decoration: underline;
     }
 `;
-
 
 const StyledHeader = styled.div`
     grid-row: 1;

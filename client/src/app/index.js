@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Header from "../header";
 import Home from "../home";
-import { ProvideAuth } from "../hooks/useAuth";
+import { ProvideAuth } from "../common/hooks/useAuth";
 import Login from "../login";
 import Profile from "../profile";
 

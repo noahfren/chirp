@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import LoadingCover from "../common/LoadingCover";
 
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "../common/hooks/useAuth";
 
 function Login() {
     const [userNameInput, setUserNameInput] = useState("");

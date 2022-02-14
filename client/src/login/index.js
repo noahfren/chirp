@@ -6,7 +6,7 @@ import { useAuth } from "../common/hooks/useAuth";
 import Page from "../common/Page";
 
 function Login() {
-    const [userNameInput, setUserNameInput] = useState("");
+    const [usernameInput, setUsernameInput] = useState("");
     // eslint-disable-next-line no-unused-vars
     const [passwordInput, setPasswordInput] = useState("");
 
@@ -20,8 +20,8 @@ function Login() {
         }
     }, []);
 
-    const handleUserNameChange = (e) => {
-        setUserNameInput(e.target.value);
+    const handleUsernameChange = (e) => {
+        setUsernameInput(e.target.value);
     };
 
     const handlePasswordChange = (e) => {
@@ -30,7 +30,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        auth.logIn(userNameInput).then(() => {
+        auth.logIn(usernameInput).then(() => {
             history.push("/");
         });
     };
@@ -39,7 +39,7 @@ function Login() {
         <Page>
             <StyledForm onSubmit={handleSubmit}>
                 <StyledLabel>Username</StyledLabel>
-                <StyledInput type="text" onChange={handleUserNameChange} />
+                <StyledInput type="text" onChange={handleUsernameChange} />
                 <StyledLabel>Password</StyledLabel>
                 <StyledInput type="password" onChange={handlePasswordChange} />
                 <StyledSubmitInput type="submit" value="Log In" />

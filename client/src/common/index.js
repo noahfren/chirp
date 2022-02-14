@@ -5,7 +5,7 @@ export const DisplayNameLabel = styled.div`
     padding-right: 5px;
 `;
 
-export const UserNameLabel = styled.div`
+export const UsernameLabel = styled.div`
     font-weight: lighter;
     padding-right: 5px;
 `;

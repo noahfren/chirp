@@ -1,14 +1,8 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+const { USER_MODEL_NAME } = require("./User");
 
-// User - track identifying info for users + auth info
-const userSchema = new Schema({
-    userName: { type: String, unique: true },
-    displayName: String,
-    password: String, // TODO: no plaintext passwords
-});
-const USER_MODEL_NAME = "User";
-exports.User = mongoose.model(USER_MODEL_NAME, userSchema);
+
 
 // Chirp - tweet-like message composed by users, 250 char limit
 const chirpSchema = new Schema(

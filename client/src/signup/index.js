@@ -5,7 +5,7 @@ import { useAuth } from "../common/hooks/useAuth";
 import Page from "../common/Page";
 
 function Signup() {
-    const [userNameInput, setUserNameInput] = useState("");
+    const [usernameInput, setUsernameInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
     const [confirmPasswordInput, setConfirmPasswordInput] = useState("");
     const [displayNameInput, setDisplayNameInput] = useState("");
@@ -20,8 +20,8 @@ function Signup() {
         }
     }, []);
 
-    const handleUserNameChange = (e) => {
-        setUserNameInput(e.target.value);
+    const handleUsernameChange = (e) => {
+        setUsernameInput(e.target.value);
     };
 
     const handlePasswordChange = (e) => {
@@ -42,7 +42,7 @@ function Signup() {
             alert("password must match");
             return;
         }
-        auth.signUp(userNameInput, passwordInput, displayNameInput).then(() => {
+        auth.signUp(usernameInput, passwordInput, displayNameInput).then(() => {
             history.push("/");
         });
     };
@@ -51,7 +51,7 @@ function Signup() {
         <Page>
             <StyledForm onSubmit={handleSubmit}>
                 <StyledLabel>Username</StyledLabel>
-                <StyledInput type="text" onChange={handleUserNameChange} />
+                <StyledInput type="text" onChange={handleUsernameChange} />
                 <StyledLabel>Password</StyledLabel>
                 <StyledInput type="password" onChange={handlePasswordChange} />
                 <StyledLabel>Confirm Password</StyledLabel>

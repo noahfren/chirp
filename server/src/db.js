@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const url = "mongodb://chirp:chirp@localhost:27017/chirp";
 

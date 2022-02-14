@@ -47,10 +47,10 @@ const useProvideAuth = () => {
 
     // Auth lifecycle methods
     // TODO: replace mock auth logic
-    const logIn = (userName) => {
+    const logIn = (username) => {
         return delayWithLoading(() => {
             setActiveUser({
-                userName,
+                username,
                 displayName: "My Name",
             });
         });
@@ -62,10 +62,10 @@ const useProvideAuth = () => {
         });
     };
 
-    const signUp = (userName, password, displayName) => {
+    const signUp = (username, password, displayName) => {
         return delayWithLoading(() => {
             setActiveUser({
-                userName,
+                username,
                 displayName,
             });
         });

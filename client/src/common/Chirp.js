@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { DisplayNameLabel, UserNameLabel } from ".";
+import { DisplayNameLabel, UsernameLabel } from ".";
 
 function Chirp({ chirp }) {
     return (
         <StyledChirp>
             <Header>
                 <DisplayNameLabel>{chirp.author.displayName}</DisplayNameLabel>
-                <UserNameLabel>@{chirp.author.userName}</UserNameLabel>
+                <UsernameLabel>@{chirp.author.username}</UsernameLabel>
             </Header>
             <Body>{chirp.message}</Body>
         </StyledChirp>
@@ -36,7 +36,7 @@ const StyledChirp = styled.div`
 Chirp.propTypes = {
     chirp: PropTypes.shape({
         author: PropTypes.shape({
-            userName: PropTypes.string,
+            username: PropTypes.string,
             displayName: PropTypes.string,
         }),
         message: PropTypes.string,

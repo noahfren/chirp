@@ -5,84 +5,84 @@ import Timeline from "../common/Timeline";
 const mockChirps = [
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "Hi! Is this thing on?",
     },
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "How bout them Wolverines",
     },
     {
         author: {
-            userName: "shubbs",
+            username: "shubbs",
             displayName: "Shelby Hubbell",
         },
         message: "That guy Noah is so annoying",
     },
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "Hi! Is this thing on?",
     },
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "How bout them Wolverines",
     },
     {
         author: {
-            userName: "shubbs",
+            username: "shubbs",
             displayName: "Shelby Hubbell",
         },
         message: "That guy Noah is so annoying",
     },
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "Hi! Is this thing on?",
     },
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "How bout them Wolverines",
     },
     {
         author: {
-            userName: "shubbs",
+            username: "shubbs",
             displayName: "Shelby Hubbell",
         },
         message: "That guy Noah is so annoying",
     },
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "Hi! Is this thing on?",
     },
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "How bout them Wolverines",
     },
     {
         author: {
-            userName: "shubbs",
+            username: "shubbs",
             displayName: "Shelby Hubbell",
         },
         message: "That guy Noah is so annoying",
@@ -90,21 +90,21 @@ const mockChirps = [
 
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "Hi! Is this thing on?",
     },
     {
         author: {
-            userName: "noahfrenkel",
+            username: "noahfrenkel",
             displayName: "Noah Frenkel",
         },
         message: "How bout them Wolverines",
     },
     {
         author: {
-            userName: "shubbs",
+            username: "shubbs",
             displayName: "Shelby Hubbell",
         },
         message: "That guy Noah is so annoying",

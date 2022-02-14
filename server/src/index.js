@@ -1,13 +1,7 @@
-require("./db");
+import "./db.js";
+import { ApolloServer } from "apollo-server";
 
-const { ApolloServer } = require("apollo-server");
-
-// const { typeDefs } = require("./schema");
-// const { resolvers } = require("./resolvers");
-
-// const server = new ApolloServer({ typeDefs, resolvers });
-
-const { schema } = require("./schema");
+import schema from "./schema.js";
 
 const server = new ApolloServer({ schema });
 

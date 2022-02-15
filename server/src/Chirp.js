@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { composeMongoose } from "graphql-compose-mongoose";
 import { USER_MODEL_NAME } from "./User.js";
+import jsonwebtoken from "jsonwebtoken";
 
 // Chirp - tweet-like message composed by users, 250 char limit
 const chirpSchema = new mongoose.Schema(
@@ -28,7 +29,7 @@ export const chirpMutations = {
             authorId: "String",
             message: "String"
         },
-        resolve: async ({ args }) => {
+        resolve: async ({ args, context }) => {
             const { authorId, message } = args;
             if (!authorId || !mongoose.isValidObjectId(authorId)) {
                 throw Error("Valid author is required");
@@ -36,6 +37,18 @@ export const chirpMutations = {
             if (!message) {
                 throw Error("Chirp cannot be blank")
             }
+            
+            const authorization = context.req.get("Authorization");
+            if (!authorization) {
+                throw Error("Not authenticated");
+            }
+
+            const jwt = authorization.split(' ')[1];
+            const { userId } = jsonwebtoken.verify(jwt, process.env.JWT_SECRET);
+            if (authorId !== userId) {
+                throw Error("Not authorized to compose this chirp");
+            }
+
             const chirp = new Chirp({ authorId, message });
             await chirp.save();
             return chirp;

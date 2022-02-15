@@ -1,10 +1,7 @@
 import argon2 from "argon2";
 import mongoose from "mongoose";
 import { composeMongoose } from "graphql-compose-mongoose";
-import jwt from "jsonwebtoken";
-
-// TODO: Move this into env variable
-const JWT_SECRET = "kfjbre1ljhgbf57alsj";
+import jsonwebtoken from "jsonwebtoken";
 
 // User - track identifying info for users + auth info
 export const USER_MODEL_NAME = "User";
@@ -21,11 +18,11 @@ userMongooseSchema.methods.verifyPassword = function (password) {
     return argon2.verify(this.hash, password);
 };
 userMongooseSchema.methods.getJWT = async function () {
-    return jwt.sign({
+    return jsonwebtoken.sign({
         userId: this._id,
         username: this.username
     }, 
-    JWT_SECRET, 
+    process.env.JWT_SECRET, 
     {
         expiresIn: "1h",
     });

@@ -3,3 +3,6 @@ db
 
 # node modules
 **/node_modules
+
+# env files
+.env

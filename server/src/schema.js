@@ -1,9 +1,9 @@
 import { schemaComposer } from "graphql-compose";
-
+import { chirpMutations, chirpQueries } from "./Chirp.js";
 import { userQueries, userMutations } from "./User.js";
 
-schemaComposer.Query.addFields(userQueries);
-schemaComposer.Mutation.addFields(userMutations);
+schemaComposer.Query.addFields({ ...userQueries, ...chirpQueries });
+schemaComposer.Mutation.addFields({ ...userMutations, ...chirpMutations });
 
 export default schemaComposer.buildSchema();
 
